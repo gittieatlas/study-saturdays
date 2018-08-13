@@ -32,13 +32,13 @@ router.post('/student/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
   try {
-    const rowsAffected = await Test.destroy({
+    await Test.destroy({
       where: {
         id: req.params.id
       }
     });
 
-    res.status(204);
+    res.sendStatus(204);
   } catch (error) {
     next(error);
   }

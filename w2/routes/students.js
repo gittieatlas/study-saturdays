@@ -58,7 +58,7 @@ router.delete('/:id', async (req, res, next) => {
       }
     });
 
-    console.log(numAffectedRows);
+    res.sendStatus(204);
   } catch (error) {
     next(error);
   }
